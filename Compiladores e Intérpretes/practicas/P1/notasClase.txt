@@ -1,0 +1,90 @@
+compilarse y ejecutarse en linux-Ubuntu
+el analizador lexico en C
+wilcoxon.py: empezamos nos import
+-sacamos por la terminal los componentes léxicos
+que encontremos
+-cada componente léxico es un entero, y es lo
+que se le entrega al analizador sintáctico.
+Cada número corresponde con cada componente léxico. por ejemplo, la primeira
+palabra es import, pues es palabra reservada y le asignamos un entero.
+Para facilitar las correcciones, en la terminal ponemos <numero,"lexema">
+por ejemplo <300,"import">
+En C metemos un fichero de definiciones definiciones.h con los componentes léxicos:
+#define IMPORT 300
+-en analizador sintáctico hay un bucle hasta recibir un fin de fichero, en el
+que implemente productor-consumidor (léxico-sintáctico) para luego imprimirlo
+-para scipy.stats, lo separamos por el punto, ya que si hay un error en
+stats, lo podemos dar más detalladamente.
+#define ID 301.
+-para poblar la tabla de símbolos, quizá lo mejor no es pillar las palabras reservadas
+desde un fichero, ya que ek fucheor se puede perder y ya no serviría nada.
+Si no ponerlas en el código, y en vez de hacer x inserciones,
+meterlas en un array y cargarlo directamente.
+Esto de poblar se hace desde un main.c, se llama a un iniciador de la tabla de
+símbolos, un "constructor" que carga los datos. El main también llamará al 
+analizador sintáctico y al final liberará memoria.
+-aquí no hay bloques, cada variable que se llame igual, es la misma variable.
+-si escogemos una tabla hash y la escalamos, nos va a preguntar cómo lo hacemos
+y porqué lo hacemos así, tanto si es estática como dinámica. Lo mismo si pillamos
+un arbol binario de búsqueda.
+-cuando llegamos al punto "." lo tenemos que enviar a algún lado, porque
+es un componente léxico. No lo metemos en la Tabla de Símbolos ni siquiera 
+consultamos su existencia en la TS, lo mandamos directamente al analizador
+sintáctico, y este lo imprime con su código ASCII <46, ".">
+-en el salto de línea, finde línea, entregamos un componente léxico referente
+a este finde línea.
+-al principio del programa en la terminal imprimimos la tabla de símbolos
+incial con las palabras reservadas. Al final se imprimirá la tabla de simbolos
+final con todos los identificadores metidos.
+-Metemos todo el código fuente .h y .c, el wilcox.py, un README donde contamos
+qué software utilizamos, etc. Y luego un makefile para compilar directamente.
+Todo esto en una carpeta, luego lo comprimimos en zip y lo subimos.
+En el README tenemos que poner las casuísticas de la compilación, si hemos puesto en el gcc algo especial
+en relación al SO.
+No poner el nombre en ningún lado, nada que nos identifique.
+Para los autómatas, se puede incluir un documento explicándolos si se complica la explicación por
+comentarios en el código.
+
+Analizador léxico y autómatas:
+en C tenemos una función para reconocer carcteres, isHexDigit() o algo así
+
+que se reconozcan en el ultimo caracter: los corchetes, etc.
+
+Gestión de erores: desacoplarla del código, es decir, errores.c errores.h. Errores de apertura de fichero, etc.
+Llamamos a la función de errores.c y que esta ponga un código de error y un mensaje, el número de línea del error.
+Si hai un error no compila un programa, con un warning si.
+
+Final del programa: se le envía el compoenente de fin de fichero al sintáctico, que es el "$"
+
+Sistema de entrada:
+Debe gestionar la escasez de memoria. Capaz de gestionar un código de miles de caracteres con una memoria de 
+por ejemplo 100 caracteres.
+Del código eliminamos las primeras líneas, empezamos en el import.
+Tenemos que hacer el SE con doble buffer con centinela.
+Desde el main() inicializamos los dos buffers(a lo mejor no, se carga el 1º y cuando se  llega al EOF se carga el buffer 2,
+si, se hace esto, ya que luego vamos a ir cargando 1 a 1 y el mecanismo es el mismo).
+Llamamos a fread() con el tamaño de bloque que necesitamos.
+Los punteros inicio y delantero pueden ser o punteros o índices de los array, pero a le le gusta más que sea un puntero.
+el tamaño máximo de lexema es el tamaño de bloque poniéndonos en el peor caso. Si esto pasa, tiene que emitir un error ya que
+no puede gestionarlo, este error es un "lexema excede el tamaño máximo de bloque/caracteres". si la distancia 
+entre inicio y deleantero supera el tamaño de bloque, entonces tiene que dar un error del sistema de entrada.
+Cuál es el tamaño de bloque? Empezamos con un bloque grande del tamaño del fichero y lo vamos reduciendo.
+Podemos hacerlo para el lexema más largo de wilcoxon.py
+
+Cómo almacenamos el lexema? pues podemos almacenar estático en el analizador léxico los caracteres con un tamaño de bloque
+o podemos hacer mallocs de 8 en 8 si nos va haciendo falta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

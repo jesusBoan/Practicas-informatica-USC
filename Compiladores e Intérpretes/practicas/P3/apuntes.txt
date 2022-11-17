@@ -1,0 +1,76 @@
+2 versionaes como. posibles resultados:
+unha version basica e outra premium
+a basica é a obligatoria que pode sacar sobresaliennte e ca premium sacaria mais que sobresaliente
+
+cursor que permite incorporar expresions matematicas e proporciona o resultado con cada enter
+
+se hai errores na expresion, di que error hai e non a executa
+
+tamen se poden asignar valores a variables e cambialos
+
+
+tamen empregar funcións
+
+o interprete debe proporcionar unha serie de comandos con funcions basicas do sistema:
+			- HELP: proporciona un contenido con comandos basicos ou exemplos. Podese ter como un comando que imprime un texto de axuda ou unha funcion que da informacion sobre o que se lle pasa.
+			- LOAD: cargar fichero, un fichero python matlab... que se cargan e executase o ficheiro coas instruccions.
+			- WORKSPACE: proporciona como salida a immpresion de todas as variables co seu valor (ultimo) inicializadas desde o comezo da sesion
+			- CLEAR: elimina todas as variables desde o inicio da sesion.
+			- QUIT: cerra o interprete e volve a consola de comandos.
+			- ECHO: unha opcion, por exemplo engadir un ; ao final que o que fai é que se ten punto e coma non se mostra o resultado e se non o ten si. Pódese poñer tamen como unha variable, se se pon a on todas as ejecucions teñen en 				 	   echo e se está off ningunha, (decicion propiA)
+			
+
+
+Que se poida executar nunha linux ubuntu
+
+gestion dinamica de librerias esto na version premiu
+
+conxunto basico de errore: division entre 0, tamen 0/0, asignacion dunha variable que non foi asignada(a=b+1, e ben sen asignar), 
+
+incliuir constantes que formen parte do programa como pi, teñense que considerar constantes.
+
+debense permitir introducir numeros en distintos formatos, internamente debense tratar como numeros en punto flotante, pero o usuario ppode escribir como queira, é dicir manexar notación cientifica.
+
+Para implementar esto faise con flex e bison
+
+bison lee a estrcutura que se lle pasa e reconoce que estea ben construida e fai a operacion.
+
+para asignar valores a variables usase a taboa de simbolos das practicas anteriores.
+
+engadese un campo que será o valor da operacion.
+
+vaise executando todo por secuencias.
+
+na libreria do sistema son as que se falaron ante: help, load, etc
+
+esta libreria temos que creala nos.
+
+as funncions do tipo sen, log. o analizador lexico detecta a palabra (log) e pregunta a tabla de simbolos, non sabe o que é e vai mirar a librería .math por poñer un ejemplo. podense cargar na tabla de simbolos algunhas funcions da libreria math. Necesitase un punteiro a funcion da libreria math, e a libreria é quen resolve iso cos parametros que se lle pasan.
+ 
+dlopen() abre a libreria
+dlclose cerra
+hai mais
+
+
+a tabla de simbolos é quen busca na libreria se esta a funcion que se lle pide. esto. dentro da version premium
+
+leerse o manual de bison
+
+ficheiro leeme coas versions de todo: flex, gcc bison
+
+engadir un makefile
+
+teño unha calculadora exemplo gardada nos marcadores de safari.
+
+Preguntar como se fai para tratar cos elementos do tipo sin cos log cando non se empregan librerias dinamicas: gardanse na tabla de simbolos e xestionanse do mesmo xeito que no caso que hai na calculdora de bison, na tabla de simbolos gardase o identificador e un punteiro a funcion.
+
+
+cada tipo que se almacena en la ts se se almacena para x cosa, una funcion se guarda el puntero, oara la variables su valor. Para esto se emplea la funcion union de c.
+
+que ociure cuando una variable aparece en un lado antes de aparecer en el otro, que hacemos cuando aparece a la izquierda, cuando aparece a la derecha. Tratar os erros neste caso con un syntax error.
+
+hai que gardar tamén o tipo de dato que é???
+
+var = patron
+
+var+ "*"+ var hacer var*var y asi sucesivamente.

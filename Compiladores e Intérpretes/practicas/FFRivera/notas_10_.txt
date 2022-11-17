@@ -1,0 +1,16 @@
+Se deben evaluar los informes asignados. Indicando en un documento, de como mucho una pÃ¡gina, los siguientes apartados:
+
+1. Aspectos positivos (claridad de la presentaciÃ³n, explicaciÃ³n sobre la optimizaciÃ³n, explicaciÃ³n sobre los resultados, anÃ¡lisis del cÃ³digo ensamblador, ...).
+
+NOTAS WHATSAPP:
+-para compiladores mirar movidas de memoria caché además del compilador
+-una de las cosas que dijo es declarar las variables como resgistros
+-probar con N muy pequeños y muy grandes a ver si cambia el comportamiento y así poder decidir el rango de valores en el que hacer el estudio, en base a eso se puede hacer un análisis previo para el informe.
+-como tengo matrices, probar a hacerlas dinámicas para hacerlas más largas
+-ITER: no se analiza, es sólo para repetir el código.
+-dividir el tiempo final entre ITER, si nos tarda muchísimo para valores grandes, entonces podemos bajarlo para esos valores
+-no hay que analizar las decisiones del compilador, ya que pueden ser imposibles de deducir
+-el que nos pasa es el de un simulador, el del ensamblador, pero bueno, esto no quiere decir que sea lo que esté pasando. Sugiere: ojear el código ensamblador original y ver si es el mismo
+-calentar la caché: calentar la caché otra vez antes del segundo bucle
+-el valor temporal de accesos a la caché se hace mucho más grande , escalando supongo que exponencialmente
+-Puede que haya un algoritmo de precarga pero es imposible de saber

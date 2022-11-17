@@ -1,0 +1,17 @@
+la salida por pantalla tiene qua ser la misma de la práctica anterior.
+
+yylex se puede modificar, no tiene por qué ser un int como por defecto, está en el manual cómo hacerlo.
+yytext, lexema
+luego siguienteElementoLéxico devuelve ese lexema y el int de la constante
+
+El sistema de entrada también se elimina ya que Flex nos permite sustituir el SE y el Analizador Léxico.
+
+Contar bien los saltos de línea para generar buenos errores.
+
+README: poner versión de Flex y de la de gcc.
+
+Hacer un MAKEFILE.
+
+Entrega: se entrega todo, desde el .l para compilarlo y luego los archivos pertinentes.
+
+Manual Flex: llegar hasta el punto 9, incluído condiciones de arranque.

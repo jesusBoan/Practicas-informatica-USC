@@ -1,0 +1,44 @@
+﻿Las practicas 5/10 de la final
+P1: 2 y pico
+P2: 0.5
+P3: 1 y pico
+PFran: 1
+
+INTERPRETE DE COMPUTACIÓN CIENTÍFICA
+
+->CADA RETORNO DE CARRO INTERPRETE ANALIZA: léxico, sintáctico e semántico + EXECUCIÓN
+->Permitir notación científica:10^-15 p.e.
+->Debe conter *constantes* básicas como PI e E. NON SON MODIFICABLES POLO USUARIO
+->Funcións matemáticas básicas como trigonométricas ou logarítmicas etc
+->Debe ter comandos do sistema:
+	- HELP: Funcionamento básico do sistema e axuda ao usuario
+	- LOAD: carga de ficheiro específico -> este é o jodido PREMIUM
+	- WORKSPACE: Indica onde estamos traballando, variables empregadas e constantes.
+	- CLEAN: Limpamos pantalla
+	- QUIT: finalizar a sesión
+->ECHO: Imprimimos resultado da operación ou non
+->Erros básicos:
+	- División por 0
+	- Indeterminación
+	- Modificación valor constante
+	- Expresións malformadas
+	- Uso de variable sen inicializar
+->Reempregamos táboa de símbolos
+	-Extendemos: almacenamos contido dos identificadores
+	-NON USAR A DE BISON
+	-Funcións: gardamos punteiro a función
+	-Dous tipos de nodos
+->Incorporación dinámica de funcións:
+	-Basic: Inicio insertamos hardcodeado como agora.
+	-Premium: Carga dinámica. dlfcn: dlopen, dlclose, dlsync, dlerror
+	
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+En la TS, función y variable tendrán tipo de dato que devuelven, la variable tiene a mayores su valor actual
+Cuando una constante aparece en el lado derecho o izq. Qué hacemos
+Lo mismo para un variable o función. Y también lo mismo para cuando ha aparecido antes en el izquierdo que en el derecho...
+
+Una cosa que dijo el es que los valores se guarden con doubles en la TS, aunque sean ints
+-----------------------------------------------------------------------
+
+
+
